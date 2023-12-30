@@ -64,7 +64,7 @@ function validationName(){
     }
 }
 function validationUrl(){
-    var urlRegx = /^(https?:\/\/)?(w{3}\.)?\w+\.\w{2,}\/?(:\d{2,5})?(\/\w+)*$/;
+    var urlRegx = /^[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/;
     var sUrl = siteUrl.value;
     if(urlRegx.test(sUrl)){
         siteUrl.classList.remove('is-invalid')
