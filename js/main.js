@@ -11,7 +11,7 @@ function addSite(){
     if(validationName() && validationUrl()){
         var site = {
             name:siteName.value,
-            url:siteUrl.value
+            url:siteUrl.value,
         };
         sitesList.push(site);
         display();
@@ -24,10 +24,10 @@ function addSite(){
 }
 function display(){
     var bookmark = "";
-    var Regx = /^https?:\/\//g;
+    var Regx = /^https?:\/\//;
     for(var i = 0 ; i < sitesList.length ; i++){
-        var userUrl = sitesList[i].rul;
-        if(!Regx.test(userUrl)){
+        var userUrl = sitesList[i].url;
+        if(Regx.test(userUrl) == false){
             userUrl = `https://${sitesList[i].url}`;
         }
         bookmark += `
