@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookmark</title>
+</head>
+<body>
+    <div class="container d-flex flex-column mt-5 align-items-center">
+    <h1 class="text-center title py-2">Bookmarker</h1>
+    <div class="book-body w-100 mt-5 py-4">
+        <div class="dotted-line w-100 bg-light">
+        </div>
+        <h2 class="sec-title text-center mt-4"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i> </h2>
+        <div>
+        <label class="txt-clr" for="inputSiteName"><i class="fa-solid fa-book-bookmark me-2"></i> Site Name</label>
+        <input  placeholder="Bookmark Name" id="inputSiteName" type="text" class="form-control mt-2" oninput="validationName()">
+        <label for="inputUrl" class="txt-clr mt-5"><i class="fa-solid fa-link me-2"></i>Site Url</label>
+        <input placeholder="Website Url" id="inputUrl" type="text" class="form-control mt-2" oninput="validationUrl()">
+        <button onclick="addSite()" id="submitBtn" class="btn mt-3 sub-btn bg-danger"> Submit</button>
+        </div>
+        <div class="dotted-line bg-light mt-5 w-100">
+        </div>
+        <div>
+            <table class="table-con mt-4 table text-center bg-light">
+            <tr>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+            </tr>
+            <tbody id="tableContent">
+
+            </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div id="message" class="d-none message w-100 h-100 position-absolute start-0 top-0 d-flex justify-content-center align-items-center">
+        <div class="message-body bg-light shadow-lg rounded-2">
+            <div class="d-flex align-items-center justify-content-between ">
+                <div class="mt-4 d-flex circles">
+                    <span class="rounded-circle me-2"></span>
+                    <span class="rounded-circle me-2"></span>
+                    <span class="rounded-circle me-2"></span>
+                </div> 
+                <div class="mt-4"><button id="closeBtn" onclick="closealert()" class="btn"><i class="fa-solid fa-x"></i></button></div>
+            </div>
+            <p class="mt-4">Site Name or Url is not valid, Please follow the rules below :</p>
+            <ul class="list-unstyled">
+                <li><i class="fa-regular fa-circle-right me-2"></i>Site name must contain at least 3 characters</li>
+                <li><i class="fa-regular fa-circle-right me-2 mt-3"></i>Site URL must be a valid one</li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
